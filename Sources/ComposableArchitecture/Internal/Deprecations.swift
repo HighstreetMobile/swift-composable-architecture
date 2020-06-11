@@ -2,6 +2,7 @@ import Combine
 
 // NB: Deprecated after 0.1.4:
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension Reducer {
   @available(*, deprecated, renamed: "debug(_:environment:)")
   public func debug(
@@ -36,6 +37,7 @@ extension Reducer {
   }
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension WithViewStore {
   @available(*, deprecated, renamed: "debug(_:)")
   public func debug(prefix: String) -> Self {
@@ -45,6 +47,7 @@ extension WithViewStore {
 
 // NB: Deprecated after 0.1.3:
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension Effect {
   @available(*, deprecated, renamed: "run")
   public static func async(
@@ -54,6 +57,7 @@ extension Effect {
   }
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension Effect where Failure == Swift.Error {
   @available(*, deprecated, renamed: "catching")
   public static func sync(_ work: @escaping () throws -> Output) -> Self {

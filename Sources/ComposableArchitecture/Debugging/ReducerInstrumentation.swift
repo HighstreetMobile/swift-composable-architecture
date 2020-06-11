@@ -1,6 +1,7 @@
 import Combine
 import os.signpost
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension Reducer {
   /// Instruments the reducer with
   /// [signposts](https://developer.apple.com/documentation/os/logging/recording_performance_data).
@@ -54,6 +55,7 @@ extension Reducer {
   }
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension Publisher where Failure == Never {
   func effectSignpost(
     _ prefix: String,

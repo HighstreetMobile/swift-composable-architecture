@@ -2,6 +2,7 @@ import Combine
 import Foundation
 
 /// A scheduler whose current time and execution can be controlled in a deterministic manner.
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 public final class TestScheduler<SchedulerTimeType, SchedulerOptions>: Scheduler
 where SchedulerTimeType: Strideable, SchedulerTimeType.Stride: SchedulerTimeIntervalConvertible {
 
@@ -94,6 +95,7 @@ where SchedulerTimeType: Strideable, SchedulerTimeType.Stride: SchedulerTimeInte
   }
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension Scheduler
 where
   SchedulerTimeType == DispatchQueue.SchedulerTimeType,
@@ -106,6 +108,7 @@ where
   }
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension Scheduler
 where
   SchedulerTimeType == RunLoop.SchedulerTimeType,
@@ -117,6 +120,7 @@ where
   }
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension Scheduler
 where
   SchedulerTimeType == OperationQueue.SchedulerTimeType,
@@ -130,6 +134,7 @@ where
 
 /// A convenience type to specify a `TestScheduler` by the scheduler it wraps rather than by the
 /// time type and options type.
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 public typealias TestSchedulerOf<Scheduler> = TestScheduler<
   Scheduler.SchedulerTimeType, Scheduler.SchedulerOptions
 > where Scheduler: Combine.Scheduler
