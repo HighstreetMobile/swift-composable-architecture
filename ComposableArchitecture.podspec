@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'ComposableArchitecture'
-  s.version  = '0.3.0'
+  s.version  = '0.6.0'
   s.summary  = 'A library for building applications in a consistent and understandable way, with composition, testing, and ergonomics in mind.'
   s.homepage = 'https://github.com/pointfreeco/swift-composable-architecture'
   s.source   = { :git => 'https://github.com/HighstreetMobile/swift-composable-architecture', :tag => s.version.to_s + '-os-available' }

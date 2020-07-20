@@ -132,7 +132,7 @@
       self.fromLocalAction = fromLocalAction
     }
   }
- 
+
   @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
   extension TestStore where State == LocalState, Action == LocalAction {
     /// Initializes a test store from an initial state, a reducer, and an initial environment.
@@ -155,7 +155,7 @@
       )
     }
   }
-  
+
   @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
   extension TestStore where LocalState: Equatable {
     /// Asserts against a script of actions.

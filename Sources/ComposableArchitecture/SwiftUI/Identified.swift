@@ -1,4 +1,5 @@
 /// A wrapper around a value and a hashable identifier that conforms to identifiable.
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 @dynamicMemberLookup
 public struct Identified<ID, Value>: Identifiable where ID: Hashable {
   public let id: ID
@@ -47,10 +48,14 @@ public struct Identified<ID, Value>: Identifiable where ID: Hashable {
   }
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension Identified: Decodable where ID: Decodable, Value: Decodable {}
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension Identified: Encodable where ID: Encodable, Value: Encodable {}
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension Identified: Equatable where Value: Equatable {}
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension Identified: Hashable where Value: Hashable {}

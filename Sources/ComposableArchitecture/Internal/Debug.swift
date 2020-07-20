@@ -1,5 +1,6 @@
 import Foundation
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 func debugOutput(_ value: Any, indent: Int = 0) -> String {
   var visitedItems: Set<ObjectIdentifier> = []
 
@@ -144,11 +145,13 @@ func debugOutput(_ value: Any, indent: Int = 0) -> String {
   return debugOutputHelp(value, indent: indent)
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 func debugDiff<T>(_ before: T, _ after: T, printer: (T) -> String = { debugOutput($0) }) -> String?
 {
   diff(printer(before), printer(after))
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension String {
   func indent(by indent: Int) -> String {
     let indentation = String(repeating: " ", count: indent)
@@ -156,22 +159,26 @@ extension String {
   }
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 public protocol CustomDebugOutputConvertible {
   var debugOutput: String { get }
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension Date: CustomDebugOutputConvertible {
   public var debugOutput: String {
     dateFormatter.string(from: self)
   }
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 private let dateFormatter: ISO8601DateFormatter = {
   let formatter = ISO8601DateFormatter()
   formatter.timeZone = TimeZone(identifier: "UTC")!
   return formatter
 }()
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension DispatchQueue: CustomDebugOutputConvertible {
   public var debugOutput: String {
     switch (self, self.label) {
@@ -265,6 +272,7 @@ extension Effect: CustomDebugOutputConvertible {
   }
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension OperationQueue: CustomDebugOutputConvertible {
   public var debugOutput: String {
     switch (self, self.name) {
@@ -274,6 +282,7 @@ extension OperationQueue: CustomDebugOutputConvertible {
   }
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension RunLoop: CustomDebugOutputConvertible {
   public var debugOutput: String {
     switch self {
@@ -292,6 +301,7 @@ extension URL: CustomDebugOutputConvertible {
 #if DEBUG
   #if canImport(CoreLocation)
     import CoreLocation
+    @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
     extension CLAuthorizationStatus: CustomDebugOutputConvertible {
       public var debugOutput: String {
         switch self {
@@ -314,6 +324,7 @@ extension URL: CustomDebugOutputConvertible {
 
   #if canImport(Speech)
     import Speech
+    @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
     extension SFSpeechRecognizerAuthorizationStatus: CustomDebugOutputConvertible {
       public var debugOutput: String {
         switch self {

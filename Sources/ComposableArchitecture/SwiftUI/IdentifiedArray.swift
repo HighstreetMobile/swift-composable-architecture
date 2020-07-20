@@ -241,21 +241,21 @@ extension IdentifiedArray where Element: Comparable {
   }
 }
 
-@available(iOS 13, *)
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension IdentifiedArray: ExpressibleByArrayLiteral where Element: Identifiable, ID == Element.ID {
   public init(arrayLiteral elements: Element...) {
     self.init(elements)
   }
 }
 
-@available(iOS 13, *)
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension IdentifiedArray where Element: Identifiable, ID == Element.ID {
   public init<S>(_ elements: S) where S: Sequence, S.Element == Element {
     self.init(elements, id: \.id)
   }
 }
 
-@available(iOS 13, *)
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension IdentifiedArray: RangeReplaceableCollection
 where Element: Identifiable, ID == Element.ID {
   public init() {
