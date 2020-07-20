@@ -185,15 +185,21 @@ extension View {
   }
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension AlertState: Equatable where Action: Equatable {}
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension AlertState: Hashable where Action: Hashable {}
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension AlertState.Button: Equatable where Action: Equatable {}
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension AlertState.Button: Hashable where Action: Hashable {}
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension AlertState: Identifiable where Action: Hashable {
   public var id: Self { self }
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension AlertState.Button {
   func toSwiftUI(send: @escaping (Action) -> Void) -> SwiftUI.Alert.Button {
     let action = { if let action = self.action { send(action) } }
@@ -210,6 +216,7 @@ extension AlertState.Button {
   }
 }
 
+@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
 extension AlertState {
   fileprivate func toSwiftUI(send: @escaping (Action) -> Void) -> SwiftUI.Alert {
     let title = Text(self.title)
