@@ -13,5 +13,6 @@ Pod::Spec.new do |s|
     'Sources/ComposableArchitecture/**/*.{h,m,swift}'
   ]
   s.dependency 'CasePaths', '0.1.1'
+  s.dependency 'CombineSchedulers', '0.1.2'
   s.weak_frameworks = 'SwiftUI', 'Combine'
 end
